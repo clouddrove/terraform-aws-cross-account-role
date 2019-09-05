@@ -1,0 +1,46 @@
+---
+#
+# This is the canonical configuration for the `README.md`
+# Run `make readme` to rebuild the `README.md`
+#
+
+# Name of this project
+name : Terraform AWS Cross Account Role
+
+# License of this project
+license: "MIT"
+
+# Canonical GitHub repo
+github_repo: terraform-aws-cross-account-role
+
+# Badges to display
+badges:
+  - name: "Terraform"
+    image: "https://img.shields.io/badge/Terraform-v0.12-green"
+    url: "https://www.terraform.io"
+  - name: "Licence"
+    image: "https://img.shields.io/badge/License-MIT-blue.svg"
+    url: "LICENSE.md"
+
+#  description of this project
+description: |-
+  This terraform module is used for creating an IAM Role which can give permission to another AWS account for accessing it's inventory.
+# extra content
+include:
+  - "terraform.md"
+
+# How to use this project
+usage : |-
+  ### Simple Example
+  Here are an example of how you can use this module in your inventory structure:
+  ```hcl
+    module "cross-access-role" {
+          source                 = "git::https://github.com/clouddrove/terraform-aws-cross-account-role.git"
+          name                   = "iam-role"
+          application            = "clouddrove"
+          environment            = "test"
+          label_order            = ["environment", "name", "application"]
+          master_account_id      = "XXXXXXXXXXX"
+          policy_arn             = "arn:aws:iam::aws:policy/AdministratorAccess"
+         }
+  ```
