@@ -87,6 +87,28 @@ Here are an example of how you can use this module in your inventory structure:
 
 
 
+## Inputs
+
+| Name | Description | Type | Default | Required |
+|------|-------------|:----:|:-----:|:-----:|
+| application | Application (e.g. `cd` or `clouddrove`). | string | `` | no |
+| description | Description of IAM Role. | string | `The role to grant permissions to this account to delegated IAM users in the master account.` | no |
+| environment | Environment (e.g. `prod`, `dev`, `staging`). | string | `` | no |
+| label_order | Label order, e.g. `name`,`application`. | list | `<list>` | no |
+| master_account_id | The ID of the master account to Read Only Access the current account. | string | - | yes |
+| name | Name  (e.g. `app` or `cluster`). | string | `` | no |
+| policy_arn | Policy ARN to attach to the role. By default it attaches `AdministratorAccess` managed policy to grant full access to AWS services and resources in the current account. | string | - | yes |
+| tags | Additional tags (e.g. map(`BusinessUnit`,`XYZ`). | map(string) | `<map>` | no |
+
+## Outputs
+
+| Name | Description |
+|------|-------------|
+| role_arn | The Amazon Resource Name (ARN) specifying the role. |
+| role_id | The stable and unique string identifying the role. |
+| role_name | The name of the crated role. |
+| tags | A mapping of tags to assign to the resource. |
+
 
 
 
