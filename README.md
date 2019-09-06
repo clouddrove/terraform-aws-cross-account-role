@@ -72,7 +72,7 @@ This module has a few dependencies:
 Here are an example of how you can use this module in your inventory structure:
 ```hcl
   module "cross-access-role" {
-        source                 = "git::https://github.com/clouddrove/terraform-aws-cross-account-role.git"
+        source                 = "git::https://github.com/clouddrove/terraform-aws-cross-account-role.git?ref=tags/0.12.0"
         name                   = "iam-role"
         application            = "clouddrove"
         environment            = "test"

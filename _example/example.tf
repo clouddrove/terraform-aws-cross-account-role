@@ -3,7 +3,7 @@ provider "aws" {
 }
 
 module "cross-access-role" {
-  source      = "git::https://github.com/clouddrove/terraform-aws-cross-account-role.git"
+  source = "git::https://github.com/clouddrove/terraform-aws-multi-account-peering.git?ref=tags/0.12.0"
 
   name        = "iam-role"
   application = "clouddrove"
