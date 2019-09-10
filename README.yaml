@@ -11,7 +11,7 @@ name : Terraform AWS Cross Account Role
 license: "MIT"
 
 # Canonical GitHub repo
-github_repo: terraform-aws-cross-account-role
+github_repo: clouddrove/terraform-aws-cross-account-role
 
 # Badges to display
 badges:
