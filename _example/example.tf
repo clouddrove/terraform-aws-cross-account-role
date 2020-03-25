@@ -3,13 +3,13 @@ provider "aws" {
 }
 
 module "cross-access-role" {
-  source = "git::https://github.com/clouddrove/terraform-aws-multi-account-peering.git?ref=tags/0.12.0"
+  source = "../"
 
   name        = "iam-role"
   application = "clouddrove"
   environment = "test"
   label_order = ["environment", "name", "application"]
 
-  master_account_id = "XXXXXXXXXXX"
+  master_account_id = "924144197303"
   policy_arn        = "arn:aws:iam::aws:policy/AdministratorAccess"
 }

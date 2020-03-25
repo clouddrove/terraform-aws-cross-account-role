@@ -35,12 +35,12 @@ usage : |-
   Here are an example of how you can use this module in your inventory structure:
   ```hcl
     module "cross-access-role" {
-          source = "git::https://github.com/clouddrove/terraform-aws-multi-account-peering.git?ref=tags/0.12.0"
-          name                   = "iam-role"
-          application            = "clouddrove"
-          environment            = "test"
-          label_order            = ["environment", "name", "application"]
-          master_account_id      = "XXXXXXXXXXX"
-          policy_arn             = "arn:aws:iam::aws:policy/AdministratorAccess"
-         }
+      source            = "git::https://github.com/clouddrove/terraform-aws-cross-account-role.git?ref=tags/0.12.1"
+      name              = "iam-role"
+      application       = "clouddrove"
+      environment       = "test"
+      label_order       = ["environment", "name", "application"]
+      master_account_id = "xxxxxxxxxx"
+      policy_arn        = "arn:aws:iam::aws:policy/AdministratorAccess"
+    }
   ```
