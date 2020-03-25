@@ -9,9 +9,11 @@
 module "labels" {
   source = "git::https://github.com/clouddrove/terraform-labels.git?ref=tags/0.12.0"
 
+  enabled     = var.enabled
   name        = var.name
   application = var.application
   environment = var.environment
+  managedby   = var.managedby
   label_order = var.label_order
 }
 
@@ -31,6 +33,7 @@ data "aws_iam_policy_document" "assume_role" {
 #Module      : AWS IAM ROLE
 #Description : Provides an IAM role.
 resource "aws_iam_role" "default" {
+  count              = var.enabled ? 1 : 0
   name               = module.labels.id
   assume_role_policy = data.aws_iam_policy_document.assume_role.json
   description        = var.description
@@ -40,7 +43,8 @@ resource "aws_iam_role" "default" {
 #Module      : AWS IAM ROLE POLICY ATTACHMENT
 #Description : PAttaches a Managed IAM Policy to an IAM role.
 resource "aws_iam_role_policy_attachment" "default" {
-  role       = aws_iam_role.default.name
+  count      = var.enabled ? 1 : 0
+  role       = aws_iam_role.default[count.index].name
   policy_arn = var.policy_arn
 }
 

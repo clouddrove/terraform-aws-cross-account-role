@@ -30,6 +30,12 @@ variable "tags" {
   description = "Additional tags (e.g. map(`BusinessUnit`,`XYZ`)."
 }
 
+variable "managedby" {
+  type        = string
+  default     = "anmol@clouddrove.com"
+  description = "ManagedBy, eg 'CloudDrove' or 'AnmolNagpal'."
+}
+
 
 variable "master_account_id" {
   type        = string
@@ -48,3 +54,8 @@ variable "policy_arn" {
   description = "Policy ARN to attach to the role. By default it attaches `AdministratorAccess` managed policy to grant full access to AWS services and resources in the current account."
 }
 
+variable "enabled" {
+  type        = bool
+  default     = true
+  description = "Enabled to create module or not."
+}
