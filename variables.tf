@@ -62,7 +62,7 @@ variable "enabled" {
 
 variable "max_session_duration" {
   type        = string
-  default     = ""
+  default     = "3600"
   description = " - (Optional) The maximum session duration (in seconds) that you want to set for the specified role. If you do not specify a value for this setting, the default maximum of one hour is applied. This setting can have a value from 1 hour to 12 hours."
 }
 
