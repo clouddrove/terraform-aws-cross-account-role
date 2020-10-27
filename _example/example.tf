@@ -8,6 +8,7 @@ module "cross-access-role" {
   name        = "iam-role"
   application = "clouddrove"
   environment = "test"
+  enabled     = false
   label_order = ["environment", "name", "application"]
 
   master_account_id = "924168197303"
