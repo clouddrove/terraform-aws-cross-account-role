@@ -7,7 +7,7 @@
 #              tags for resources. You can use terraform-labels to implement a strict
 #              naming convention.
 module "labels" {
-  source = "git::https://github.com/clouddrove/terraform-labels.git?ref=tags/0.12.0"
+  source = "git::https://github.com/clouddrove/terraform-labels.git?ref=tags/0.13.0"
 
   enabled     = var.enabled
   name        = var.name
@@ -33,11 +33,13 @@ data "aws_iam_policy_document" "assume_role" {
 #Module      : AWS IAM ROLE
 #Description : Provides an IAM role.
 resource "aws_iam_role" "default" {
-  count              = var.enabled ? 1 : 0
-  name               = module.labels.id
-  assume_role_policy = data.aws_iam_policy_document.assume_role.json
-  description        = var.description
-  tags               = module.labels.tags
+  count                 = var.enabled ? 1 : 0
+  name                  = module.labels.id
+  assume_role_policy    = data.aws_iam_policy_document.assume_role.json
+  description           = var.description
+  tags                  = module.labels.tags
+  force_detach_policies = var.force_detach_policies
+  max_session_duration  = var.max_session_duration
 }
 
 #Module      : AWS IAM ROLE POLICY ATTACHMENT
