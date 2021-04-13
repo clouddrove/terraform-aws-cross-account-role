@@ -6,11 +6,10 @@ module "cross-access-role" {
   source = "../"
 
   name        = "iam-role"
-  application = "clouddrove"
   environment = "test"
-  enabled     = false
-  label_order = ["environment", "name", "application"]
+  enabled     = true
+  label_order = ["environment", "name"]
 
-  master_account_id = "xxxxxxxxxx"
+  master_account_id = "924144197303"
   policy_arn        = "arn:aws:iam::aws:policy/AdministratorAccess"
 }

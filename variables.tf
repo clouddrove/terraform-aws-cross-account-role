@@ -6,10 +6,22 @@ variable "name" {
   description = "Name  (e.g. `app` or `cluster`)."
 }
 
-variable "application" {
+variable "repository" {
   type        = string
-  default     = ""
-  description = "Application (e.g. `cd` or `clouddrove`)."
+  default     = "https://registry.terraform.io/modules/clouddrove/cross-account-role/aws/0.14.0"
+  description = "Terraform current module repo"
+
+  validation {
+    # regex(...) fails if it cannot find a match
+    condition     = can(regex("^https://", var.repository))
+    error_message = "The module-repo value must be a valid Git repo link."
+  }
+}
+
+variable "attributes" {
+  type        = list(any)
+  default     = []
+  description = "Additional attributes (e.g. `1`)."
 }
 
 variable "environment" {
@@ -19,7 +31,7 @@ variable "environment" {
 }
 
 variable "label_order" {
-  type        = list
+  type        = list(any)
   default     = []
   description = "Label order, e.g. `name`,`application`."
 }
