@@ -98,7 +98,7 @@ Here are an example of how you can use this module in your inventory structure:
 | force\_detach\_policies | (Optional) Specifies to force detaching any policies the role has before destroying it. Defaults to false | `bool` | `false` | no |
 | label\_order | Label order, e.g. `name`,`application`. | `list(any)` | `[]` | no |
 | managedby | ManagedBy, eg 'CloudDrove' or 'AnmolNagpal'. | `string` | `"anmol@clouddrove.com"` | no |
-| master\_account\_arn | The ID of the master account to Read Only Access the current account. | `string` | n/a | yes |
+| master\_account\_user | The ID of the master account to Read Only Access the current account. | `string` | n/a | yes |
 | max\_session\_duration | - (Optional) The maximum session duration (in seconds) that you want to set for the specified role. If you do not specify a value for this setting, the default maximum of one hour is applied. This setting can have a value from 1 hour to 12 hours. | `string` | `"3600"` | no |
 | name | Name  (e.g. `app` or `cluster`). | `string` | `""` | no |
 | policy\_arn | Policy ARN to attach to the role. By default it attaches `AdministratorAccess` managed policy to grant full access to AWS services and resources in the current account. | `string` | n/a | yes |
