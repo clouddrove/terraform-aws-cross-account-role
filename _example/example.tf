@@ -10,6 +10,6 @@ module "cross-access-role" {
   enabled     = true
   label_order = ["environment", "name"]
 
-  master_account_id = "924144197303"
-  policy_arn        = "arn:aws:iam::aws:policy/AdministratorAccess"
+  master_account_arn = "arn:aws:iam::xxxxxxxxxxx:root"
+  policy_arn         = "arn:aws:iam::aws:policy/AdministratorAccess"
 }
