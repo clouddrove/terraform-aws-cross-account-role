@@ -25,7 +25,7 @@ data "aws_iam_policy_document" "assume_role" {
     ]
     principals {
       type        = "AWS"
-      identifiers = ["arn:aws:iam::${var.master_account_id}:root"]
+      identifiers = [var.master_account_user]
     }
     effect = "Allow"
   }

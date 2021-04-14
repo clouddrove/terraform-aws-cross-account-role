@@ -49,7 +49,7 @@ variable "managedby" {
 }
 
 
-variable "master_account_id" {
+variable "master_account_arn" {
   type        = string
   description = "The ID of the master account to Read Only Access the current account."
 }
