@@ -47,14 +47,14 @@ resource "aws_iam_role" "default" {
 #Description : PAttaches a Managed IAM Policy to an IAM role.
 resource "aws_iam_role_policy_attachment" "default" {
   count      = var.enabled ? 1 : 0
-  role       = aws_iam_role.default[count.index].name
+  role       = join("", aws_iam_role.default.*.name)
   policy_arn = var.policy_arn
 }
 
 resource "aws_iam_role_policy" "default" {
   count  = var.enabled && var.policy_enabled && var.policy_arn == "" ? 1 : 0
   name   = format("%s-policy", module.labels.id)
-  role   = aws_iam_role.default.*.name[0]
+  role   = join("", aws_iam_role.default.*.name)
   policy = var.policy
 }
 
