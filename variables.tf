@@ -62,8 +62,8 @@ variable "description" {
 }
 
 variable "policy_arn" {
-  type        = string
-  default     = ""
+  type        = list(string)
+  default     = []
   description = "Policy ARN to attach to the role. By default it attaches `AdministratorAccess` managed policy to grant full access to AWS services and resources in the current account."
 }
 
