@@ -73,7 +73,7 @@ Here are an example of how you can use this module in your inventory structure:
 ```hcl
   module "cross-access-role" {
     source            = "clouddrove/cross-account-role/aws"
-    version           = "0.14.0"
+    version           = "0.15.0"
     name              = "iam-role"
     environment       = "test"
     label_order       = ["environment", "name", "application"]
@@ -104,7 +104,7 @@ Here are an example of how you can use this module in your inventory structure:
 | policy | Policy ARN to attach to the role. By default it attaches `AdministratorAccess` managed policy to grant full access to AWS services and resources in the current account. | `string` | `""` | no |
 | policy\_arn | Policy ARN to attach to the role. By default it attaches `AdministratorAccess` managed policy to grant full access to AWS services and resources in the current account. | `list(string)` | `[]` | no |
 | policy\_enabled | Enabled to create module or not. | `bool` | `false` | no |
-| repository | Terraform current module repo | `string` | `"https://registry.terraform.io/modules/clouddrove/cross-account-role/aws/0.14.0"` | no |
+| repository | Terraform current module repo | `string` | `"https://github.com/clouddrove/terraform-aws-cross-account-role"` | no |
 | tags | Additional tags (e.g. map(`BusinessUnit`,`XYZ`). | `map(string)` | `{}` | no |
 
 ## Outputs
