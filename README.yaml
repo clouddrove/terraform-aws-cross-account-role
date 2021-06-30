@@ -36,7 +36,7 @@ usage : |-
   ```hcl
     module "cross-access-role" {
       source            = "clouddrove/cross-account-role/aws"
-      version           = "0.14.0"
+      version           = "0.15.0"
       name              = "iam-role"
       environment       = "test"
       label_order       = ["environment", "name", "application"]
