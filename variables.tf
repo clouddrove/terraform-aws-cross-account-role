@@ -62,7 +62,8 @@ variable "description" {
 }
 
 variable "policy_arn" {
-  type        = string
+  type        = list(string)
+  default     = []
   description = "Policy ARN to attach to the role. By default it attaches `AdministratorAccess` managed policy to grant full access to AWS services and resources in the current account."
 }
 
@@ -82,4 +83,16 @@ variable "force_detach_policies" {
   type        = bool
   default     = false
   description = "(Optional) Specifies to force detaching any policies the role has before destroying it. Defaults to false"
+}
+
+variable "policy" {
+  type        = string
+  default     = ""
+  description = "Policy ARN to attach to the role. By default it attaches `AdministratorAccess` managed policy to grant full access to AWS services and resources in the current account."
+}
+
+variable "policy_enabled" {
+  type        = bool
+  default     = false
+  description = "Enabled to create module or not."
 }
