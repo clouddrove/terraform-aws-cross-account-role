@@ -6,7 +6,7 @@ module "cross-access-role" {
   source = "../"
 
   name        = "iam-role"
-  environment = "test"
+  environment = "test1"
   enabled     = true
   label_order = ["environment", "name"]
 
