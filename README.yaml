@@ -26,7 +26,7 @@ badges:
     url: "https://github.com/clouddrove/terraform-aws-cross-account-role/actions/workflows/tfsec.yml"
   - name: "static-checks"
     image: "https://github.com/clouddrove/terraform-aws-cross-account-role/actions/workflows/terraform.yml/badge.svg"
-     url: "https://github.com/clouddrove/terraform-aws-cross-account-role/actions/workflows/terraform.yml"
+    url: "https://github.com/clouddrove/terraform-aws-cross-account-role/actions/workflows/terraform.yml"
 
 #  description of this project
 description: |-
@@ -40,7 +40,7 @@ usage : |-
   ### Simple Example
   Here are an example of how you can use this module in your inventory structure:
   ```hcl
-    module "cross-access-role" {
+      module "cross-access-role" {
       source            = "clouddrove/cross-account-role/aws"
       version           = "1.0.1"
       name              = "iam-role"
@@ -48,5 +48,5 @@ usage : |-
       label_order       = ["environment", "name", "application"]
       master_account_id = "xxxxxxxxxx"
       policy_arn        = "arn:aws:iam::aws:policy/AdministratorAccess"
-    }
+      }
   ```
