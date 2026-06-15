@@ -10,6 +10,6 @@ terraform {
   }
 
   provider_meta "aws" {
-    module_name = "clouddrove/terraform-aws-cross-account-role"
+    user_agent = ["github.com/clouddrove/terraform-aws-cross-account-role"]
   }
 }
